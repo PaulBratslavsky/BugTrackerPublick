@@ -1,17 +1,16 @@
-import React, { useContext, useEffect } from 'react'
-import { useHistory } from "react-router-dom";
+import React, { useContext } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
+import WithAuth from './hoc/WithAuth'
+
 
 import SideBar from './components/SideBar'
 import Header from './components/Header'
 import ContentView from './components/ContentView'
 
-import Splash from './pages/splash'
 import MyBugs from './pages/mybugs'
-import Dashboard from './pages/dashboard'
+import Projects from './pages/projects'
 import Bugs from './pages/bugs'
-import Login from './pages/login'
 
 import { UserContext } from './context/userContext'
 
@@ -27,15 +26,7 @@ const LayoutStyled = styled.div`
   .header { grid-area: 1 / 2 / 2 / 3; }
   .content { grid-area: 2 / 2 / 3 / 3; }
 `
-export default function Layout() {
-  const history = useHistory();
-  const isUser = true;
-
-  useEffect(() =>{
-    if (!isUser) {
-      history.push('/')
-    }
-  },[])
+function App() {
 
  const { isLoading, data } = useContext(UserContext)
  console.log(isLoading, data)
@@ -44,13 +35,13 @@ export default function Layout() {
     <Header />
     <ContentView>
     <Switch>
-      <Route exact path='/' component={Splash} />
-      <Route exact path='/mybugs' component={MyBugs} />
-      <Route path='/dashboard' component={Dashboard} />
+      <Route exact path='/' component={MyBugs} />
+      <Route path='/projects' component={Projects} />
       <Route path='/bugs' component={Bugs} />
-      <Route exact path='/login' component={Login} />
       <Route component={() => <h1>not found</h1>} />
     </Switch>
     </ContentView>
   </LayoutStyled>
 }
+
+export default WithAuth(App)

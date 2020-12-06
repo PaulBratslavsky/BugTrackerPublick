@@ -18,10 +18,8 @@ const LogoStyled = styled(NavLink)`
 
   border-bottom: #222327 2px solid;
 `
-const isUser = false;
-
 export default function Logo() {
-  return <LogoStyled to={!isUser ? '/login' : '/'}>
+  return <LogoStyled to={'/'}>
     <AiFillBug />
   </LogoStyled>
 }

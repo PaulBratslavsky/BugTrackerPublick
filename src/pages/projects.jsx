@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Loader from '../components/Loader'
 import { UserContext } from '../context/userContext'
-import { Route, useRouteMatch } from 'react-router-dom'
+import {  useRouteMatch } from 'react-router-dom'
 
 // function ListPannel() {
 //   return <div>
@@ -10,30 +10,30 @@ import { Route, useRouteMatch } from 'react-router-dom'
 //   </div>
 // }
 
-const SectionHeaderStyled = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #adadad;
-  margin-bottom: 1rem;
-  span {
-    font-size: 1.2rem;
-  }
+// const SectionHeaderStyled = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   color: #adadad;
+//   margin-bottom: 1rem;
+//   span {
+//     font-size: 1.2rem;
+//   }
 
-  .count {
-    color: #7F6CE8;
-    padding: 0 4px;
-  }
-`
+//   .count {
+//     color: #7F6CE8;
+//     padding: 0 4px;
+//   }
+// `
 
-function SectionHeader({title, count = null}) {
-  return <SectionHeaderStyled>
-    <h2>{title}</h2> 
-    { count && <span>(<span className="count">{count}</span>)</span> }
-  </SectionHeaderStyled>
-}
+// function SectionHeader({title, count = null}) {
+//   return <SectionHeaderStyled>
+//     <h2>{title}</h2> 
+//     { count && <span>(<span className="count">{count}</span>)</span> }
+//   </SectionHeaderStyled>
+// }
 
-const DashboardLayout = styled.div`
+const ProjectsLayout = styled.div`
   display: grid;
   height: 100%;
   grid-template-columns: repeat(2, 1fr) 2fr 1fr;
@@ -42,7 +42,7 @@ const DashboardLayout = styled.div`
   grid-row-gap: 32px;
 `
 
-export default function Dashboard() {
+export default function Projects() {
   const { isLoading, data } = useContext(UserContext)
   const { path } = useRouteMatch()
 
@@ -51,8 +51,9 @@ export default function Dashboard() {
   if (isLoading) return <Loader />
 
   console.log(path)
-  return <DashboardLayout>
-    <div>
+  return <ProjectsLayout>
+    All Projects
+    {/* <div>
       <Route path={`${path}`}>
         <SectionHeader title="Projects" count={10} />
       </Route>
@@ -71,8 +72,8 @@ export default function Dashboard() {
       <Route path={`${path}/:projectID/:bugsID/:notesID`}>
         <SectionHeader title="Notes" count={4} />
       </Route>
-    </div>
-  </DashboardLayout>
+    </div> */}
+  </ProjectsLayout>
 }
 
 

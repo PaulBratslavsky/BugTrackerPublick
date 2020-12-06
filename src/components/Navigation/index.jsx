@@ -8,11 +8,11 @@ const isUser = true;
 
 
 export default function Navigation() {
+ 
   if (!isUser) return null
-
   return <nav>
-    <Avatar path="/mybugs" />
-    <IconLink path='/dashboard/projects' exact>
+    <Avatar path="/" />
+    <IconLink path='/projects'>
       <RiHome3Fill />
     </IconLink>
     <IconLink path='/bugs'>

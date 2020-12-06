@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router} from 'react-router-dom'
 import UserContextProvider from './context/userContext'
 import './index.css';
-
-import Layout from './Layout';
+import WithAuth from './App';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -12,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <UserContextProvider>
       <Router>
-        <Layout />
+        <WithAuth />
       </Router>
     </UserContextProvider>
   </React.StrictMode>,

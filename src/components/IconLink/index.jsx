@@ -28,7 +28,6 @@ const IconLinkStyled = styled(NavLink).attrs({ activeClassName })`
     background: linear-gradient(90deg, rgba(255,255,255,0.2091211484593838) 0%, rgba(48,50,56,1) 100%);
     border-left: #7F6CE8 2px solid;
   }
-
 `
 
 export default function IconLink({children, path }) {

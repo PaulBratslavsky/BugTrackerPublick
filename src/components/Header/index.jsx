@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import IconContainer from '../IconContainer'
-import { IoMdLogIn } from 'react-icons/io';
+import { IoMdLogOut } from 'react-icons/io';
+import IconButton from '../IconButton';
 
 
 const HeaderStyled = styled.header`
@@ -13,21 +12,13 @@ const HeaderStyled = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  a {
-    &:hover {
-      color: red;
-    }
-  }
 `
-const isUser = false;
+
 export default function Header() {
   return <HeaderStyled className="header margin">
     <div>Trackabug</div>
     <div>
-      { !isUser 
-        ? <Link to='/login'><IconContainer><IoMdLogIn /></IconContainer></Link> 
-        : <h2>Logout</h2>
-      }
+      <IconButton component={<IoMdLogOut onClick={() => alert('logout')} />}/>  
     </div>
   </HeaderStyled>
 }
