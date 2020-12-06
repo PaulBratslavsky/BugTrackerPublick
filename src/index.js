@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router} from 'react-router-dom'
 import UserContextProvider from './context/userContext'
 import './index.css';
-import WithAuth from './App';
+
+import App from './App';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -11,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <UserContextProvider>
       <Router>
-        <WithAuth />
+        <App/>
       </Router>
     </UserContextProvider>
   </React.StrictMode>,

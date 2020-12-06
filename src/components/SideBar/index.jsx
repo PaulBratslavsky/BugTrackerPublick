@@ -9,7 +9,7 @@ const SideBarStyled = styled.div`
 
 export default function SideBar() {
   return <SideBarStyled className="sidebar">
-    <Logo />
+    <Logo border/>
     <Navigation />
   </SideBarStyled>
 }
