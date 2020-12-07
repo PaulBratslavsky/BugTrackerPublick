@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../../context/userContext'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import Loader from '../Loader'
 import Count from '../Count'
+
+const avatarImg = "https://avatars2.githubusercontent.com/u/6153188?v=4"
 
 const activeClassName = 'nav-item-active'
 
@@ -41,8 +42,8 @@ const AvatarStyled = styled.div`
 `
 
 export default function Avatar({path}) {
-  const { isLoading, data } = useContext(UserContext)
+  // const { isLoading, data } = useContext(UserContext)
   return <AvatarStyled>
-    { isLoading ? <Loader /> :  <IconLinkStyled to={path} exact><Count /><img src={data.avatar_url} alt="avatar"/></IconLinkStyled> }
+    { false ? <Loader /> :  <IconLinkStyled to={path} exact><Count /><img src={avatarImg} alt="avatar"/></IconLinkStyled> }
   </AvatarStyled>
 }

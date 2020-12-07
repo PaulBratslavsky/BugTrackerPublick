@@ -48,7 +48,7 @@ export default function Input({type, icon, placeholder, onChange, value, name, e
     <input 
       name={name}
       type={type} 
-      autocomplete="off" 
+      autoComplete="off" 
       placeholder={placeholder}
       onChange={onChange}
       value={value}

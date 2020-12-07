@@ -16,6 +16,7 @@ export default function useGetDataHook(url) {
      
       const response = await fetch(url, { signal: abortController.signal });
       const data = await response.json();
+      console.log(data)
       setData(data);
       setIsLoading(false);
     };
