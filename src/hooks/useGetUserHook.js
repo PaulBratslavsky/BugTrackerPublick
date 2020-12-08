@@ -17,6 +17,4 @@ export default function useLoginUserHook(username, password) {
     },[user, username, password, setUser])
 
     return { isLoading, user, setUser };
-
-
 }

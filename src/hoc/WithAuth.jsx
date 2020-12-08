@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from '../pages/login'
+import Login from '../pages/Login'
 
 const withAuth  = WrappedCopponent => ({isAuthenticated, component, ...props}) => {
     if (!isAuthenticated) return <Login />   

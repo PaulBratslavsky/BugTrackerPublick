@@ -7,7 +7,7 @@ import SideBar from '../SideBar'
 import Header from '../Header'
 import ContentView from '../ContentView'
 
-import MyBugs from '../../pages/bugs'
+import MyBugs from '../../pages/mybugs'
 import Projects from '../../pages/projects'
 import Bugs from '../../pages/bugs'
 
