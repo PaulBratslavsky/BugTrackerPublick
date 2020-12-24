@@ -19,7 +19,7 @@ const INITIAL_STATE = {
 export default function Login() {
 
   const { setUser } = useContext(UserContext)
-  
+
   const { 
     handleFieldChange,
     handleSubmit,
@@ -28,6 +28,8 @@ export default function Login() {
 		error } = useUserLogin(INITIAL_STATE, loginURL, setUser)
   
   if (isLoading) return <LoginStyled><Loader /></LoginStyled>
+
+  console.log(error)
   
   return <LoginStyled>
     <form onSubmit={handleSubmit} className="form-container">

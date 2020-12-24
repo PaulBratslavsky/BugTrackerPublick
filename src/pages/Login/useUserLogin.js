@@ -29,7 +29,7 @@ export default function useUserLogin(initialState, loginURL, setUser) {
         setUser(data);
       } catch (error) {
         setIsLoading(false);
-        setError(`LOGIN ERROR: ${error}`);
+        setError(`Please check API connection`);
       }
     } else {
       setError("Form cannot be blank.");
@@ -37,15 +37,16 @@ export default function useUserLogin(initialState, loginURL, setUser) {
   }
 
   function handleFieldChange(e) {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+		const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
     setError(null);
-	}
-	
-	return {
-		handleFieldChange,
-		handleSubmit,
-		formData,
-		isLoading,
-		error,
-	}
+  }
+
+  return {
+    handleFieldChange,
+    handleSubmit,
+    formData,
+    isLoading,
+    error,
+  };
 }
