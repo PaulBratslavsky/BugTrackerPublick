@@ -6,7 +6,7 @@ import { HiDotsVertical } from 'react-icons/hi'
   Card Components
 *******************************************/
 const CardStyled = styled.section`
-  background: #313844;
+  background: #303238;
   color: #adb5bd;
   padding: 1rem;
   height: auto;
