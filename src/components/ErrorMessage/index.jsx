@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledError = styled.div`
   background:#c5338c; // #c5334c;
-  color: #1c1c1f;
+  color: #f1f1f1;
   padding: 0.25rem 0.5rem;
   border-radius: 2px;
   font-size: 0.8rem;
