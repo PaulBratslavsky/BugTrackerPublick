@@ -17,12 +17,8 @@ function TableRow({ row, columns, index }) {
           (item) => item === column.props.source
         )
 
-        if (column.props.status)
-          return (
-            <td>
-              <span class="badge">{row[result]}</span>
-            </td>
-          )
+        if (column.props.render)
+          return <td>{column.props.render(row[result])}</td>
 
         return <td>{row[result]}</td>
       })}

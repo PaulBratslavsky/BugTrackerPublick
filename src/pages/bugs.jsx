@@ -1,4 +1,5 @@
 import React from 'react'
+import Badge from '../components/Badge'
 import Card from '../components/Card'
 import Table, { TableColumn } from '../components/DataTable'
 
@@ -62,9 +63,13 @@ export default function Bugs() {
           <TableColumn source="title" label="Project Name" />
           <TableColumn source="startDate" label="Start Date" />
           <TableColumn source="dueDate" label="Due Date" />
-          <TableColumn source="status" label="Status" status />
+          <TableColumn
+            source="status"
+            label="Status"
+            render={(data) => <Badge text={data} />}
+          />
           <TableColumn source="assigned" label="Assigned" />
-        </Table>
+          </Table>
       </Card>
     </div>
   )
