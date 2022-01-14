@@ -4,7 +4,7 @@ import { UserContext } from './context/userContext'
 
 function App() {
   const { user } = useContext(UserContext)
-  return <div>
+  return <div class="root-app">
     <WithAuth isAuthenticated={user} />
   </div>
 }

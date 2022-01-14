@@ -8,6 +8,7 @@ export default function useUserLogin(initialState, loginURL, setUser) {
   async function handleSubmit(e) {
     e.preventDefault(e);
     const { username, password } = formData;
+    console.log(username, password);
     const params = {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -17,19 +18,27 @@ export default function useUserLogin(initialState, loginURL, setUser) {
     if (username.length && password.length) {
       setIsLoading(true);
       try {
-        const response = await fetch(loginURL, params);
+        const response = await fetch("http://localhost:1337/api/auth/local", params);
         const data = await response.json();
 
-        if (data.message) {
-          const errorMessage = data.message[0].messages[0].message;
+        console.log(data)
+
+        if (data.data === null && data.error) {
+          const errorMessage = data.error.message;
           setError(errorMessage);
           setIsLoading(false);
           return;
         }
-        setUser(data);
+
+        if (data.data !== null && data.jwt) {
+          setUser(data);
+          setIsLoading(false);
+          return;
+        }
+        
       } catch (error) {
         setIsLoading(false);
-        setError(`Please check API connection`);
+        setError(error.message);
       }
     } else {
       setError("Form cannot be blank.");

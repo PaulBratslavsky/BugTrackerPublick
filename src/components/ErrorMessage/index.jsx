@@ -4,11 +4,12 @@ import styled from 'styled-components'
 const StyledError = styled.div`
   background:#c5338c; // #c5334c;
   color: #f1f1f1;
-  padding: 0.25rem 0.5rem;
+  padding: 12px 4px;
   border-radius: 2px;
   font-size: 0.8rem;
   text-align: center;
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 `;
 
 export default function ErrorMessage({error}) {

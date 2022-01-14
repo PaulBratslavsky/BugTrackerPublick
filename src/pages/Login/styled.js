@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const LoginStyled = styled.div`
   background: #222327;
@@ -8,17 +8,28 @@ export const LoginStyled = styled.div`
   align-items: center;
 
   .form-container {
-    padding: 2rem 1rem;
+    width: 420px;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     border-radius: 3px;
     background: #1c1c1f;
   }
 
+  .logo {
+    font-size: 5rem;
+    span {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
   .forgot-password {
-    color: #6D6E77;
-    font-size: 0.6rem;
+    color: #6d6e77;
+    margin-top: 1rem;
+    font-size: 0.8rem;
     text-align: center;
     text-transform: capitalize;
+    cursor: pointer;
   }
-`
+`;

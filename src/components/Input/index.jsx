@@ -12,17 +12,22 @@ const InputStyled = styled.div`
     padding-bottom: 6px;
     color: #C2C2C4;
     height: 100%;
-    
     display: flex;
     justify-content: center;
     align-items: center;
+
+    svg {
+      font-size: 1.6rem;
+    }
   }
 
   
   input {
+    font-size: 1.4rem;
     display: flex;
+    width: 100%;
     align-items: center;
-    padding: 4px 4px 4px 24px;
+    padding: 12px 4px 8px 34px;
     border: none;
     background: none;
     color:  #7F6CE8;
@@ -43,7 +48,7 @@ const InputStyled = styled.div`
 `
 
 export default function Input({type, icon, placeholder, onChange, value, name, error}) {
-  return <InputStyled>
+  return <InputStyled className='input'>
     {icon && <span>{icon}</span> }
     <input 
       name={name}

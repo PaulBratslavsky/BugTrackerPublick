@@ -14,7 +14,7 @@ import Bugs from '../../pages/bugs'
 const LayoutStyled = styled.div`
   background: #222327;
   color: #fff;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: 85px 1fr;
   grid-template-rows: 65px 1fr;
@@ -22,6 +22,7 @@ const LayoutStyled = styled.div`
   .sidebar { grid-area: 1 / 1 / 3 / 2; }
   .header { grid-area: 1 / 2 / 2 / 3; }
   .content { grid-area: 2 / 2 / 3 / 3; }
+   overflow: auto;
 `
 function MainLayout() {
 

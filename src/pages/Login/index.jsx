@@ -9,7 +9,7 @@ import ErrorMessage from '../../components/ErrorMessage'
 import { LoginStyled } from './styled'
 import useUserLogin from './useUserLogin'
 
-const loginURL = 'http://localhost:1337/auth/local'
+const loginURL = 'http://localhost:1337/api/auth/local'
 
 const INITIAL_STATE = {
   username: '',
@@ -28,12 +28,10 @@ export default function Login() {
 		error } = useUserLogin(INITIAL_STATE, loginURL, setUser)
   
   if (isLoading) return <LoginStyled><Loader /></LoginStyled>
-
-  console.log(error)
   
   return <LoginStyled>
     <form onSubmit={handleSubmit} className="form-container">
-      <Logo name="trackabug" height="100%" />
+      <Logo className="logo" name="trackabug" height="100%" />
    
       <Input 
         type="text" 
